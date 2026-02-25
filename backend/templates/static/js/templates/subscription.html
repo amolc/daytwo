@@ -13,8 +13,8 @@
                     <input type="number" class="form-control" ng-model="newItem.product" required>
                 </div>
                 <div class="col-md-3">
-                    <label class="form-label">START DATE</label>
-                    <input type="date" class="form-control" ng-model="newItem.start_date" required>
+                    <label class="form-label">QUANTITY</label>
+                    <input type="number" class="form-control" ng-model="newItem.quantity" required>
                 </div>
                 <div class="col-12">
                     <button type="submit" class="btn btn-success">Add Subscription</button>
@@ -27,6 +27,7 @@
             <tr>
                 <th>CUSTOMER ID</th>
                 <th>PRODUCT ID</th>
+                <th>QUANTITY</th>
                 <th>START DATE</th>
                 <th>Actions</th>
             </tr>
@@ -35,6 +36,7 @@
             <tr ng-repeat="item in items">
                 <td>{{item.customer}}</td>
                 <td>{{item.product}}</td>
+                <td>{{item.quantity}}</td>
                 <td>{{item.start_date | date}}</td>
                 <td>
                     <button class="btn btn-danger btn-sm" ng-click="deleteItem(item.id)">Delete</button>

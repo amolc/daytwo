@@ -21,5 +21,12 @@ app.controller('ProductController', ['$scope', '$http', 'API_BASE_URL', function
         });
     };
 
+    $scope.updateItem = function(id) {
+        $http.put(API_BASE_URL + '/product/product/' + id + '/', $scope.newItem).then(function() {
+            $scope.newItem = {};
+            $scope.loadItems();
+        });
+    };
+
     $scope.loadItems();
 }]);

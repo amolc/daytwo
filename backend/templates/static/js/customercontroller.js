@@ -21,5 +21,12 @@ app.controller('CustomerController', ['$scope', '$http', 'API_BASE_URL', functio
         });
     };
 
+    $scope.updateItem = function(id) {
+        $http.put(API_BASE_URL + '/customer/customer/' + id + '/', $scope.newItem).then(function() {
+            $scope.newItem = {};
+            $scope.loadItems();
+        });
+    };
+
     $scope.loadItems();
 }]);

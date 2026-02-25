@@ -1,0 +1,56 @@
+<div class="mt-4">
+    <h2>Staff Management</h2>
+    <div class="card mb-4 mt-3">
+        <div class="card-body">
+            <h5 class="card-title">Add New Staff</h5>
+            {{newItem}}
+            <form ng-submit="addItem()" class="row g-3">
+                <div class="col-md-3">
+                    <label class="form-label">EMAIL</label>
+                    <input type="email" class="form-control" ng-model="newItem.email" required>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">PASSWORD</label>
+                    <input type="password" class="form-control" ng-model="newItem.password" required>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">NAME</label>
+                    <input type="text" class="form-control" ng-model="newItem.name" required>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">PHONE</label>
+                    <input type="text" class="form-control" ng-model="newItem.phone" required>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">ADDRESS</label>
+                    <input type="text" class="form-control" ng-model="newItem.address" required>
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-success">Add Staff</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <table class="table table-striped" ng-init="loadItems()">
+        <thead>
+            <tr>
+                <th>EMAIL</th>
+                <th>NAME</th>
+                <th>PHONE</th>
+                <th>ADDRESS</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in items">
+                <td>{{item.email}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.phone}}</td>
+                <td>{{item.address}}</td>
+                <td>
+                    <button class="btn btn-danger btn-sm" ng-click="deleteItem(item.id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

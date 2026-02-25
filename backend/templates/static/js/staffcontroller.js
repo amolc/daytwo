@@ -21,5 +21,12 @@ app.controller('StaffController', ['$scope', '$http', 'API_BASE_URL', function($
         });
     };
 
+    $scope.updateItem = function(id) {
+        $http.put(API_BASE_URL + '/staff/staff/' + id + '/', $scope.newItem).then(function() {
+            $scope.newItem = {};
+            $scope.loadItems();
+        });
+    };
+
     $scope.loadItems();
 }]);

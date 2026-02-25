@@ -16,6 +16,10 @@
                     <label class="form-label">CATEGORY ID</label>
                     <input type="number" class="form-control" ng-model="newItem.category" required>
                 </div>
+                <div class="col-md-3">
+                    <label class="form-label">DESCRIPTION</label>
+                    <input type="text" class="form-control" ng-model="newItem.description">
+                </div>
                 <div class="col-12">
                     <button type="submit" class="btn btn-success">Add Product</button>
                 </div>
@@ -28,6 +32,7 @@
                 <th>NAME</th>
                 <th>PRICE</th>
                 <th>CATEGORY</th>
+                <th>DESCRIPTION</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -36,6 +41,7 @@
                 <td>{{item.name}}</td>
                 <td>{{item.price | currency}}</td>
                 <td>{{item.category}}</td>
+                <td>{{item.description}}</td>
                 <td>
                     <button class="btn btn-danger btn-sm" ng-click="deleteItem(item.id)">Delete</button>
                 </td>

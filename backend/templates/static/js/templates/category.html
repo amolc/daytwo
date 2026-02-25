@@ -8,6 +8,10 @@
                     <label class="form-label">NAME</label>
                     <input type="text" class="form-control" ng-model="newItem.name" required>
                 </div>
+                <div class="col-md-6">
+                    <label class="form-label">DESCRIPTION</label>
+                    <input type="text" class="form-control" ng-model="newItem.description" required>
+                </div>
                 <div class="col-12">
                     <button type="submit" class="btn btn-success">Add Category</button>
                 </div>
@@ -18,12 +22,14 @@
         <thead>
             <tr>
                 <th>NAME</th>
+                <th>DESCRIPTION</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
             <tr ng-repeat="item in items">
                 <td>{{item.name}}</td>
+                <td>{{item.description}}</td>
                 <td>
                     <button class="btn btn-danger btn-sm" ng-click="deleteItem(item.id)">Delete</button>
                 </td>
